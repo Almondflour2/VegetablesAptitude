@@ -27,7 +27,6 @@ namespace VegetablesAptitude
 
                     Console.WriteLine("Adding new user! Name: ");
                     string Taker = Console.ReadLine();
-                    Console.WriteLine($"{Taker}'s Age: ");
                     _takers.Add(new Quiz() { Taker = Taker });
                     var newTaker = _takers.FirstOrDefault(x => x.Taker == Taker);
                     //newTaker.Response();
