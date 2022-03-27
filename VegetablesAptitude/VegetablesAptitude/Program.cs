@@ -1,66 +1,74 @@
-﻿
+﻿using System;
+using System.IO;
 
-//MASTER LOOP
-string answer = "";
-do
+namespace VegetablesAptitude
 {
-
-    Console.WriteLine("Vegetables: Aptitude");
-
-    Console.WriteLine("would you like to know what vegetable you are?");
-
-    Console.WriteLine("type no to exit");
-    answer = Console.ReadLine();
-
-    Console.Clear();
-    Console.WriteLine($"{answer}");
-
-    string[] questions = { "Are you nervous at parties?", "Do you get scared at car dealerships?", "Does it overwhelm you to be in large open spaces filled with people?" };
-    string questionReply = "";
-    int percentage = questionReply.Length;
-
-
-    int score = 0;
-
-    foreach (string question in questions)
+    class Program
     {
-
-        Console.WriteLine($"{question}", "\n");
-        questionReply = Console.ReadLine();
-        if (questionReply == "yes")
+        private static List<Quiz> _takers = new List<Quiz>();
+        static void Main(string[] args)
         {
-            score++;
+            // Menu Loop
+            Console.WriteLine("hey sprout...!");
+
+            int i = 1;
+            while (i > 0)
+            {
+                Console.WriteLine("Would you like to know what vegetable you'll grow into?");
+                Console.WriteLine("1: Continue");
+                Console.WriteLine("2: No I do not.");
+                Console.WriteLine("3. Search for previous results");
+
+                int entry = Convert.ToInt32(Console.ReadLine()); // turns string response into integer to read
+                
+                if (entry == 1) // initializes the quiz
+                {
+                    Console.WriteLine("Okay...let's start...");
+
+                    Console.WriteLine("Adding new user! Name: ");
+                    string Taker = Console.ReadLine();
+                    Console.WriteLine($"{Taker}'s Age: ");
+                    _takers.Add(new Quiz() { Taker = Taker });
+                    var newTaker = _takers.FirstOrDefault(x => x.Taker == Taker);
+                    //newTaker.Response();
+                    newTaker.Questions();
+                }
+                else if (entry == 2) // exit
+                {
+                    i = 0;
+                }
+                else if (entry == 3)
+                {
+                    Console.WriteLine("Search for other results.");
+                    string searchTaker = Console.ReadLine();
+
+                    // use a linq query to find someone
+                    var taker = _takers.FirstOrDefault(x => x.Taker == searchTaker);
+
+                    // do they exist?
+                    if (taker != null)
+                    {
+                        // user isnt null and runs their greeting function
+                        taker.Response();
+                    }
+                    else
+                    {
+                        // user is null
+                        Console.WriteLine($"{searchTaker} not found");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Not a valid entry."); // re-start loop
+
+                }
+            }
+
         }
-
     }
-
-    /*string shyResult = shyCalculator(score);*/
-
-    Console.WriteLine($"{shyCalculator(score)}... type no to exit");
-    answer = Console.ReadLine();
-
-
-} while (answer != "no"); //END MASTER LOOP
-  //END PROGRAM TEXT
-  Console.WriteLine("Okay, goodbye.");
-
-static string shyCalculator(int score)
-{
-    string result = "You are not shy.";
-    switch (score)
-    {
-        case 1:
-            result = "You are a little shy..";
-            break;
-        case 2:
-            result = "your pretty shy";
-            break;
-        case 3:
-            result = "cry baby cant go outside call 911 for help ordering a sandwich";
-            break;
-    }
-    return result;
 }
+
+
 
 
 
