@@ -1,0 +1,9 @@
+1,Do you talk to people first? ice cream
+1,Is it easy for you to continue a conversation?
+1,Are you filled with ideas to blurt out and share?
+2,Is your schedule strict?
+2,Are you happy with change?
+2,Does a sudden neighbor make you scared?
+3,Do you poop regularly?
+3,Are you filled with imagination?
+3,Do you often ponder the sky at night?
