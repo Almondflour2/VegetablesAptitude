@@ -29,8 +29,8 @@ namespace VegetablesAptitude
                     string Taker = Console.ReadLine();
                     _takers.Add(new Quiz() { Taker = Taker });
                     var newTaker = _takers.FirstOrDefault(x => x.Taker == Taker);
-                    //newTaker.Response();
                     newTaker.Questions();
+                    newTaker.Result();
                 }
                 else if (entry == 2) // exit
                 {
@@ -48,7 +48,7 @@ namespace VegetablesAptitude
                     if (taker != null)
                     {
                         // user isnt null and runs their greeting function
-                        taker.Response();
+                        taker.Result();
                     }
                     else
                     {

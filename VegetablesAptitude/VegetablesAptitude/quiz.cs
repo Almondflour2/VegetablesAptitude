@@ -6,125 +6,115 @@ namespace VegetablesAptitude
 	public class Quiz
 	{
         public string Taker { get; set; } //name variable
+
+        //score integers
+        public int ScoreInterface = 0;
+        public int ScoreEthics = 0;
+        public int ScoreEssence = 0;
+
+        public string Interface;
+        public string Ethics;
+        public string Essence;
+
+        public string veggie = Vegetable();
+
+        public static string Vegetable()
+        {
+            string[] Veggie = System.IO.File.ReadAllLines(@"..\text files\Vegetables.txt");
+
+            //randomizes integer from 0 - length of array 
+            Random rnd = new Random();
+            return Veggie[rnd.Next(0, (Veggie.Length))];
+
+        } 
         
-        public void Response() // result output
-            {
-                Console.WriteLine($"{Taker} is an octillery bean sprout!");
-            }
+
         public void Questions()
         {
-            //score integers
-            int ScoreInterface = 0;
-            int ScoreEthics = 0;
-            int ScoreEssence = 0;
-
+           
             // creates array with questions read from file
             string[] Qs = System.IO.File.ReadAllLines(@"..\text files\Questions.txt");
 
-            //System.Console.WriteLine("Contents of WriteLines2.txt = ");
             while (Qs.Length > 0)
             {
+                //randomizes integer from 0 - length of array 
                 Random rnd = new Random();
                 int number = rnd.Next(0, (Qs.Length));
 
+                //reduces array of questions by one after printing one
                 var questionsList = new List<string>(Qs);
                 questionsList.RemoveAt(number);
-                //
 
-               
-                /*//score interface
-                if (Qs[number].Contains("1,"))
-                {
-                    string reply = Console.ReadLine();
-                    if (reply.Contains("yes"))
-                    {
-                        ScoreInterface++;
-                        Console.WriteLine(ScoreInterface);
-                    }
-                    
-                }
-                //score ethics
-                if (Qs[number].Contains("2,"))
-                {
-                    string reply = Console.ReadLine();
-                    if (reply.Contains("yes"))
-                    {
-                        ScoreEthics++;
-                        Console.WriteLine(ScoreEthics);
-                    }
+                //converts first character of array to correspond to category of question into an integer for use in switch case
+                int questionType = Convert.ToInt32(Qs[number].Substring(0, 1));
 
-                }
-                //score essence
-                if (Qs[number].Contains("3,"))
-                {
-                    string reply = Console.ReadLine();
-                    if (reply.Contains("yes"))
-                    {
-                        ScoreEssence++;
-                        Console.WriteLine(ScoreEssence);
-                    }
+                string questionPrompt = Qs[number].Remove(0, 2); // removes 2 characters starting at 0 (1,)
 
-                }*/
-
-
-                string questionPrompt = Qs[number];
-
-                
-                questionPrompt = questionPrompt.Remove(0, 2); // removes 2 characters starting at 0 (1,)
-
+                //clear console and write new question
                 Console.Clear();
+                Console.WriteLine($"{Taker}, {questionPrompt}");
+                Console.WriteLine("Type (1) for yes \nType (2) for no");
 
-                Console.WriteLine(questionPrompt);
-                
-                string reply = Console.ReadLine();
-                if (reply.Contains("yes"))
+                int reply = Convert.ToInt32(Console.ReadLine());
+                try 
                 {
-                    if (Qs[number].Contains("1,"))
-                    { ScoreInterface++; }
-                    else if (Qs[number].Contains("2,"))
-                    { ScoreEthics++; }
-
+                    if (reply == 1)
+                    {
+                        switch (questionType)
+                        {
+                            case 1:
+                                ScoreInterface++;
+                                break;
+                            case 2:
+                                ScoreEthics++;
+                                break;
+                            case 3:
+                                ScoreEssence++;
+                                break;
+                        }
+                    }
+                    else if (reply == 2)
+                    { }
                 }
-
-                
-
-                //
-
-
+                catch (IOException e)
+                {
+                    Console.WriteLine("There was an error reading the file: ");
+                    Console.WriteLine(e.Message);
+                }
 
                 Qs = questionsList.ToArray();
 
-                      
-                //Console.WriteLine(Qs.Length);
-
                
-
             }
 
-            Console.WriteLine($"interface: {ScoreInterface} ethics: {ScoreEthics}");
+        }
+        public string ScoreStringify()
+        {
+            if (ScoreInterface <= 1) Interface = "thoughtful";
+            if (ScoreInterface == 2) Interface = "intimate";
+            if (ScoreInterface == 3) Interface = "confident";
+
+            if (ScoreEthics <= 1) Ethics = "restrictive";
+            if (ScoreEthics == 2) Ethics = "sturdy";
+            if (ScoreEthics == 3) Ethics = "malleable";
+
+            if (ScoreEssence <= 1) Essence = "practical";
+            if (ScoreEssence == 2) Essence = "out of bounce";
+            if (ScoreEssence == 3) Essence = "existential";
+
+            return $"{Interface}, {Ethics}, and {Essence} {veggie}";
+        }
+
+        public void Result() // result output with name, 3 scores, and vegetable
+        {
+            Console.WriteLine($"{Taker} is a {ScoreStringify()}!");
             Console.ReadLine();
             Console.Clear();
-
         }
 
 
-        public Quiz()
-		{
-            /*//QUESTIONS
-            //creates array with questions read from file
-            string[] questions = System.IO.File.ReadAllLines(@"..\text files\Questions.txt");
-            *//*PrintArray(questions);*//*
 
-            Console.WriteLine("Contents of WriteLines2.txt = ");
-            foreach (string question in questions)
-            {
-                // Use a tab to indent each line of the file.
-                Console.WriteLine("\t" + questions);
-            }*/
 
-        }
-
-        
 
     }
 }
