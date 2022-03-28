@@ -39,21 +39,43 @@ namespace VegetablesAptitude
                 else if (entry == 3)
                 {
                     Console.WriteLine("Search for other results.");
-                    string searchTaker = Console.ReadLine();
 
-                    // use a linq query to find someone
-                    var taker = _takers.FirstOrDefault(x => x.Taker == searchTaker);
-
-                    // do they exist?
-                    if (taker != null)
+                    if (_takers.Count == 0)
                     {
-                        // user isnt null and runs their greeting function
-                        taker.Result();
+                        Console.WriteLine("No one has taken it yet");
                     }
                     else
                     {
-                        // user is null
-                        Console.WriteLine($"{searchTaker} not found");
+                        Console.WriteLine("Here are the takers:");
+                        for (int x = 0; x < _takers.Count; x++)
+                        {
+
+                            Console.WriteLine($"{_takers[x].Taker}");
+
+
+                        }
+                        Console.WriteLine("Enter the taker name: ");
+                        string searchTaker = Console.ReadLine();
+
+                        // use a linq query to find someone
+                        var taker = _takers.FirstOrDefault(x => x.Taker == searchTaker);
+
+                        // do they exist?
+                        if (taker != null)
+                        {
+                            // user isnt null and runs their greeting function
+                            taker.Result();
+                        }
+                        else
+                        {
+                            // user is null
+                            Console.WriteLine($"{searchTaker} not found");
+
+                        }
+
+                  
+
+                    
                     }
                 }
                 else

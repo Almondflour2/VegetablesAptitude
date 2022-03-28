@@ -52,13 +52,17 @@ namespace VegetablesAptitude
 
                 //clear console and write new question
                 Console.Clear();
-                Console.WriteLine($"{Taker}, {questionPrompt}");
-                Console.WriteLine("Type (1) for yes \nType (2) for no");
+                
 
-                int reply = Convert.ToInt32(Console.ReadLine());
-                try 
+                
+                bool isReplyValid;
+
+                do
                 {
-                    if (reply == 1)
+                    Console.WriteLine($"{Taker}, {questionPrompt}");
+                    Console.WriteLine("Type (1) for yes \nType (2) for no");
+                    string reply = Console.ReadLine();
+                    if (reply == "1")
                     {
                         switch (questionType)
                         {
@@ -72,15 +76,25 @@ namespace VegetablesAptitude
                                 ScoreEssence++;
                                 break;
                         }
+                        isReplyValid = true;
                     }
-                    else if (reply == 2)
-                    { }
-                }
-                catch (IOException e)
-                {
-                    Console.WriteLine("There was an error reading the file: ");
-                    Console.WriteLine(e.Message);
-                }
+                    else if (reply == "2") {
+                        isReplyValid = true;
+                    }
+                    else
+                    {
+                        isReplyValid = false;
+                        Console.WriteLine("invalid input, press enter");
+                        Console.ReadLine();
+                    }
+                    
+                    Console.Clear();
+
+                } while (!isReplyValid);
+             
+                    
+     
+     
 
                 Qs = questionsList.ToArray();
 
