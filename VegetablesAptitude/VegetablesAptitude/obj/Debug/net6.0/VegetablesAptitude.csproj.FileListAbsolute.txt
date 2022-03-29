@@ -1,0 +1,15 @@
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\bin\Debug\net6.0\VegetablesAptitude.exe
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\bin\Debug\net6.0\VegetablesAptitude.deps.json
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\bin\Debug\net6.0\VegetablesAptitude.runtimeconfig.json
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\bin\Debug\net6.0\VegetablesAptitude.dll
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\bin\Debug\net6.0\ref\VegetablesAptitude.dll
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\bin\Debug\net6.0\VegetablesAptitude.pdb
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\obj\Debug\net6.0\VegetablesAptitude.csproj.AssemblyReference.cache
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\obj\Debug\net6.0\VegetablesAptitude.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\obj\Debug\net6.0\VegetablesAptitude.AssemblyInfoInputs.cache
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\obj\Debug\net6.0\VegetablesAptitude.AssemblyInfo.cs
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\obj\Debug\net6.0\VegetablesAptitude.csproj.CoreCompileInputs.cache
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\obj\Debug\net6.0\VegetablesAptitude.dll
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\obj\Debug\net6.0\ref\VegetablesAptitude.dll
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\obj\Debug\net6.0\VegetablesAptitude.pdb
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\obj\Debug\net6.0\VegetablesAptitude.genruntimeconfig.cache
