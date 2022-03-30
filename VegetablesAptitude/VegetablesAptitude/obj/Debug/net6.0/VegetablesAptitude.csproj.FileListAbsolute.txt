@@ -13,3 +13,5 @@ C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesApti
 C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\obj\Debug\net6.0\ref\VegetablesAptitude.dll
 C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\obj\Debug\net6.0\VegetablesAptitude.pdb
 C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\obj\Debug\net6.0\VegetablesAptitude.genruntimeconfig.cache
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\bin\Debug\net6.0\bin\Debug\text files\Questions.txt
+C:\Users\Bella\source\repos\VegetablesAptitude\VegetablesAptitude\VegetablesAptitude\bin\Debug\net6.0\bin\Debug\text files\Vegetables.txt

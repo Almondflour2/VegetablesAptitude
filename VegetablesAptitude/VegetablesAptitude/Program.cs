@@ -38,7 +38,7 @@ namespace VegetablesAptitude
                 Console.WriteLine(" Would you like to know what vegetable you'll grow into?");
                 Console.WriteLine(" 1: Continue");
                 Console.WriteLine(" 2: No I do not.");
-                Console.WriteLine(" 3. Search for previous results");
+                Console.WriteLine(" 3: Search for previous results");
 
                 int entry = Convert.ToInt32(Console.ReadLine()); //turns string response into integer to read
                 
