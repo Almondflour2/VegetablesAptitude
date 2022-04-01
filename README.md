@@ -23,7 +23,7 @@
  define 'takers' as an instance\
  of the quiz class, and then uses\
  a questions method to read in \
- questions from a text file. \ 
+ questions from a text file.\
  The result is generated from	\
  3 traits that are processed and\
  scored differently through the use\
