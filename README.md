@@ -20,10 +20,11 @@
 
  Main program - a menu loop that\
  Uses a class called "quiz" to\
- define 'takers' as an instance\
+ define a 'taker' as an instance\
  of the quiz class, and then uses\
  a questions method to read in \
- questions from a text file.\
+ questions from a text file,\
+ in a random order every time.\
  The result is generated from	\
  3 traits that are processed and\
  scored differently through the use\
